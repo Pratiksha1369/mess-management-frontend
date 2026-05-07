@@ -1,0 +1,451 @@
+/* Dashboard.css - Modern Premium UI */
+
+/* Main container with soft shadows and rounded corners */
+.dashboard-container {
+  max-width: 1000px;
+  margin: 50px auto;
+  padding: 40px;
+  background: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+/* Header section with gradient text */
+.dashboard-header {
+  text-align: center;
+  margin-bottom: 40px;
+  padding-bottom: 30px;
+  border-bottom: 2px dashed #e1e8ed;
+}
+
+.dashboard-header h2 {
+  font-size: 32px;
+  font-weight: 800;
+  margin-bottom: 10px;
+  /* Premium text gradient effect */
+  background: linear-gradient(90deg, #4f46e5, #0ea5e9);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.dashboard-header p {
+  color: #64748b;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+/* Metric Cards Layout */
+.dashboard-metrics {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+  margin-bottom: 40px;
+}
+
+/* Individual Card Styling with Hover Animation */
+.metric-card {
+  flex: 1;
+  background: linear-gradient(145deg, #ffffff, #f8fafc);
+  padding: 30px;
+  border-radius: 16px;
+  border: 1px solid #e2e8f0;
+  text-align: center;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Lift the card up when mouse hovers over it */
+.metric-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.metric-card h3 {
+  color: #475569;
+  margin-bottom: 20px;
+  font-size: 15px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  font-weight: 700;
+}
+
+/* Status Badge Styling (Pill shape) */
+.status-badge {
+  display: inline-block;
+  padding: 8px 20px;
+  border-radius: 30px;
+  font-weight: 700;
+  font-size: 13px;
+  margin-bottom: 15px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.status-badge.active {
+  background-color: #dcfce7;
+  color: #166534;
+  border: 1px solid #bbf7d0;
+}
+
+.status-badge.expired {
+  background-color: #fee2e2;
+  color: #991b1b;
+  border: 1px solid #fecaca;
+}
+
+.status-badge.grace_period {
+  background-color: #fef3c7;
+  color: #92400e;
+  border: 1px solid #fde68a;
+}
+
+/* Typography for plan details */
+.plan-name {
+  font-size: 20px;
+  font-weight: 800;
+  color: #1e293b;
+  margin-bottom: 8px;
+}
+
+.validity {
+  font-size: 14px;
+  color: #94a3b8;
+  font-weight: 500;
+}
+
+/* Big number styling for meals */
+.meal-count {
+  font-size: 56px;
+  font-weight: 900;
+  color: #4f46e5;
+  margin: 15px 0;
+  text-shadow: 2px 2px 4px rgba(79, 70, 229, 0.15);
+}
+
+.total-meals {
+  font-size: 24px;
+  color: #cbd5e1;
+  font-weight: 600;
+}
+
+/* Warning card if no plan is found */
+.no-plan-card {
+  text-align: center;
+  background: linear-gradient(to right, #fffbeb, #fef3c7);
+  padding: 40px;
+  border-radius: 16px;
+  border: 1px dashed #f59e0b;
+  margin-bottom: 40px;
+}
+
+.no-plan-card h3 {
+  color: #b45309;
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+
+.no-plan-card p {
+  color: #92400e;
+  font-size: 16px;
+}
+
+/* Premium Logout Button */
+.logout-btn {
+  display: block;
+  margin: 0 auto;
+  padding: 12px 40px;
+  background: linear-gradient(to right, #ef4444, #dc2626);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(239, 68, 68, 0.2);
+}
+
+/* Button hover animation */
+.logout-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(239, 68, 68, 0.3);
+}
+
+/* Loading status text */
+.status-text {
+  text-align: center;
+  color: #64748b;
+  font-size: 18px;
+  font-weight: 500;
+  animation: pulse 1.5s infinite;
+}
+
+/* Simple breathing animation for loading text */
+@keyframes pulse {
+  0% { opacity: 0.6; }
+  50% { opacity: 1; }
+  100% { opacity: 0.6; }
+}
+
+/* --- New CSS for Today's Menu Section --- */
+
+.menu-section {
+  margin-top: 40px;
+  margin-bottom: 40px;
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 16px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+.section-title {
+  color: #1e293b;
+  font-size: 20px;
+  font-weight: 800;
+  margin-bottom: 20px;
+  text-align: center;
+  border-bottom: 2px dashed #e2e8f0;
+  padding-bottom: 15px;
+}
+
+.menu-cards-container {
+  display: flex;
+  gap: 20px;
+  justify-content: space-between;
+}
+
+/* Base styling for meal boxes */
+.meal-box {
+  flex: 1;
+  padding: 25px;
+  border-radius: 12px;
+  text-align: center;
+  transition: transform 0.2s;
+}
+
+.meal-box:hover {
+  transform: translateY(-5px);
+}
+
+.meal-box h4 {
+  font-size: 18px;
+  margin-bottom: 10px;
+  font-weight: 800;
+}
+
+.meal-box p {
+  font-size: 16px;
+  color: #334155;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+/* Specific colors for Lunch (Daytime feel) */
+.lunch-box {
+  background: linear-gradient(135deg, #fffbeb, #fef3c7);
+  border: 1px solid #fde68a;
+}
+.lunch-box h4 {
+  color: #d97706;
+}
+
+/* Specific colors for Dinner (Nighttime feel) */
+.dinner-box {
+  background: linear-gradient(135deg, #f1f5f9, #e2e8f0);
+  border: 1px solid #cbd5e1;
+}
+.dinner-box h4 {
+  color: #334155;
+}
+
+/* Styling when admin hasn't added menu */
+.no-menu-box {
+  text-align: center;
+  padding: 20px;
+  background-color: #f8fafc;
+  border-radius: 8px;
+  color: #64748b;
+  font-style: italic;
+}
+
+/* --- QR Code Section Styling --- */
+
+.qr-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #e2e8f0;
+  background: #ffffff;
+}
+
+/* Creating a nice border frame around the QR code */
+.qr-wrapper {
+  padding: 10px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 15px;
+  display: inline-block;
+  border: 2px dashed #cbd5e1;
+}
+
+.qr-instruction {
+  font-size: 13px;
+  color: #64748b;
+  font-weight: 600;
+  text-align: center;
+}
+
+/* =========================================
+   Purchase Plan Section Styling
+   ========================================= */
+.purchase-section {
+  margin-top: 20px;
+}
+
+.no-plan-header {
+  text-align: center;
+  margin-bottom: 30px;
+  background: linear-gradient(to right, #fffbeb, #fef3c7);
+  padding: 20px;
+  border-radius: 12px;
+  border: 1px dashed #f59e0b;
+}
+
+.no-plan-header h3 {
+  color: #b45309;
+  font-size: 22px;
+  margin-bottom: 5px;
+}
+
+.no-plan-header p {
+  color: #92400e;
+}
+
+/* Pricing Cards Grid Configuration */
+.plans-grid {
+  display: flex;
+  gap: 25px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.plan-card {
+  background: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 30px;
+  width: 300px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s;
+  display: flex;
+  flex-direction: column;
+}
+
+.plan-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  border-color: #cbd5e1;
+}
+
+.plan-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #f1f5f9;
+  padding-bottom: 15px;
+  margin-bottom: 15px;
+}
+
+.plan-card-header h4 {
+  font-size: 18px;
+  color: #1e293b;
+  font-weight: 800;
+}
+
+.plan-type-badge {
+  font-size: 12px;
+  font-weight: bold;
+  background: #f1f5f9;
+  padding: 4px 8px;
+  border-radius: 6px;
+}
+
+.plan-price h2 {
+  font-size: 36px;
+  color: #4f46e5;
+  font-weight: 900;
+  margin-bottom: 5px;
+}
+
+.plan-price p {
+  color: #64748b;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+.plan-features {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 25px;
+  flex-grow: 1;
+}
+
+.plan-features li {
+  color: #334155;
+  font-size: 14px;
+  margin-bottom: 10px;
+  font-weight: 500;
+}
+
+/* Call to Action Button */
+.buy-btn {
+  width: 100%;
+  padding: 12px;
+  background: #10b981;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.buy-btn:hover {
+  background: #059669;
+}
+
+/* Payment Processing Fake Overlay */
+.payment-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255,255,255,0.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.payment-box {
+  background: white;
+  padding: 40px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e2e8f0;
+}
+
+.payment-box h3 {
+  color: #4f46e5;
+  margin-bottom: 10px;
+  animation: pulse 1.5s infinite;
+}
