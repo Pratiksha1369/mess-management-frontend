@@ -16,12 +16,12 @@ const StudentTable = () => {
 
     const fetchStudents = async () => {
         try {
-            const response = await axios.get('http://localhost:8080/students?page=0&size=50');
+            const response = await axios.get('https://mess-management-backend-production.up.railway.app/students?page=0&size=50');
             const studentsList = response.data.data;
 
             const studentsWithPlans = await Promise.all(studentsList.map(async (student) => {
                 try {
-                    const subRes = await axios.get(`http://localhost:8080/subscriptions/student/${student.id}`);
+                    const subRes = await axios.get(`https://mess-management-backend-production.up.railway.app/subscriptions/student/${student.id}`);
                     const subs = subRes.data;
                     
                     if (subs && subs.length > 0) {
@@ -55,7 +55,7 @@ const StudentTable = () => {
     const handleDelete = async (id) => {
         if (window.confirm("Are you sure you want to delete this student? Active plans cannot be deleted.")) {
             try {
-                const res = await axios.delete(`http://localhost:8080/students/${id}`);
+                const res = await axios.delete(`https://mess-management-backend-production.up.railway.app/students/${id}`);
                 alert(res.data); 
                 fetchStudents(); 
             } catch (error) {
@@ -85,7 +85,7 @@ const StudentTable = () => {
         
         try {
             // Call the Spring Boot PUT API we just created
-            await axios.put(`http://localhost:8080/subscriptions/update/${selectedStudent.subId}`, {
+            await axios.put(`https://mess-management-backend-production.up.railway.app/subscriptions/update/${selectedStudent.subId}`, {
                 remainingMeals: editFormData.remainingMeals.toString(),
                 status: editFormData.status
             });

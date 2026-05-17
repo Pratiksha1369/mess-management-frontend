@@ -20,7 +20,7 @@ const ManagePlans = () => {
     // Function to fetch all plans from the backend
     const fetchPlans = async () => {
         try {
-            const response = await axios.get('http://localhost:8080/plans');
+            const response = await axios.get('https://mess-management-backend-production.up.railway.app/plans');
             setPlans(response.data);
             setLoading(false);
         } catch (error) {
@@ -51,7 +51,7 @@ const ManagePlans = () => {
         e.preventDefault();
         try {
             // Make the PUT request to the existing Spring Boot API
-            await axios.put(`http://localhost:8080/plans/${selectedPlan.id}`, {
+            await axios.put(`https://mess-management-backend-production.up.railway.app/plans/${selectedPlan.id}`, {
     ...editFormData,
     price: Number(editFormData.price),
     totalMeals: Number(editFormData.totalMeals)

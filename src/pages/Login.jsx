@@ -32,7 +32,7 @@ const Login = () => {
 
     // 🔵 2. STUDENT LOGIN LOGIC 🔵
     try {
-      const response = await axios.post('http://localhost:8080/students/login', {
+      const response = await axios.post('https://mess-management-backend-production.up.railway.app/students/login', {
         email: email.trim(), 
         password: password
       });

@@ -25,7 +25,7 @@ const Dashboard = () => {
   const fetchDashboardData = async (parsedStudent) => {
     try {
       // 1. Check if the student currently has an active subscription
-      const subResponse = await axios.get(`http://localhost:8080/subscriptions/student/${parsedStudent.id}`);
+      const subResponse = await axios.get(`https://mess-management-backend-production.up.railway.app/subscriptions/student/${parsedStudent.id}`);
       
       if (subResponse.data && subResponse.data.length > 0) {
         // If subscriptions exist, extract the most recent one
@@ -67,7 +67,7 @@ const Dashboard = () => {
           // THE BULLETPROOF FIX: Bypass Java Timezone issues
           // Fetch all menus and let React pick the latest matching one
           // ==========================================
-          const menuResponse = await axios.get(`http://localhost:8080/menu/all`);
+          const menuResponse = await axios.get(`https://mess-management-backend-production.up.railway.app/menu/all`);
           const allMenus = menuResponse.data;
           
           if (allMenus && Array.isArray(allMenus) && allMenus.length > 0) {
@@ -92,7 +92,7 @@ const Dashboard = () => {
       } else {
         // 2. If no active plan exists, fetch the list of available plans to display
         setSubscription(null);
-        const plansResponse = await axios.get('http://localhost:8080/plans');
+        const plansResponse = await axios.get('https://mess-management-backend-production.up.railway.app/plans');
         setAvailablePlans(plansResponse.data);
       }
       setLoading(false);
@@ -125,7 +125,7 @@ const Dashboard = () => {
       setTimeout(async () => {
         try {
           // Call the backend API to assign the plan to the student
-          await axios.post(`http://localhost:8080/subscriptions/join?studentId=${studentData.id}&planId=${planId}`);
+          await axios.post(`https://mess-management-backend-production.up.railway.app/subscriptions/join?studentId=${studentData.id}&planId=${planId}`);
           
           alert("Payment Successful! 🎉 Your mess plan is now active.");
           

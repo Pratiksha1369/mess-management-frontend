@@ -36,7 +36,7 @@ const Register = () => {
 
     try {
       // Sending data to the Spring Boot backend
-      const response = await axios.post('http://localhost:8080/students', formData);
+      const response = await axios.post('https://mess-management-backend-production.up.railway.app/students', formData);
       
       console.log("Registration Success: ", response.data);
       setSuccess('Registration successful! Redirecting to login...');

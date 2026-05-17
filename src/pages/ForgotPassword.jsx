@@ -26,7 +26,7 @@ const ForgotPassword = () => {
 
     try {
       // Calling backend to send OTP. Note: Backend expects @RequestParam, so we use params.
-      const response = await axios.post(`http://localhost:8080/students/forgot-password?email=${email}`);
+      const response = await axios.post(`https://mess-management-backend-production.up.railway.app/students/forgot-password?email=${email}`);
       
       if (response.data.includes('SUCCESS')) {
         setMessage('OTP has been sent to your email.');
@@ -48,7 +48,7 @@ const ForgotPassword = () => {
 
     try {
       // Calling backend to reset password using URL parameters
-      const response = await axios.post(`http://localhost:8080/students/reset-password?email=${email}&otp=${otp}&newPassword=${newPassword}`);
+      const response = await axios.post(`https://mess-management-backend-production.up.railway.app/students/reset-password?email=${email}&otp=${otp}&newPassword=${newPassword}`);
       
       if (response.data.includes('SUCCESS')) {
         setMessage('Password reset successfully! Redirecting to login...');

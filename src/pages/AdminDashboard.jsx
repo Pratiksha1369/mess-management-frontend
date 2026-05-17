@@ -42,7 +42,7 @@ const AdminDashboard = () => {
   // Fetch Analytics function
   const fetchAnalytics = async () => {
     try {
-      const response = await axios.get('http://localhost:8080/subscriptions/analytics');
+      const response = await axios.get('https://mess-management-backend-production.up.railway.app/subscriptions/analytics');
       setAnalytics(response.data);
     } catch (err) {
       console.error("Error fetching analytics: ", err);
@@ -63,7 +63,7 @@ const AdminDashboard = () => {
     e.preventDefault();
     setMenuMessage(''); setMenuError('');
     try {
-      await axios.post('http://localhost:8080/menu/add', menuData);
+      await axios.post('https://mess-management-backend-production.up.railway.app/menu/add', menuData);
       setMenuMessage(`Successfully updated ${menuData.planType} menu for ${menuData.date}!`);
       setMenuData({ ...menuData, lunch: '', dinner: '' }); 
     } catch (err) {
@@ -79,7 +79,7 @@ const AdminDashboard = () => {
       setScanStatus({ message: 'Processing...', type: 'processing' });
 
       try {
-        await axios.post(`http://localhost:8080/subscriptions/consume/${scannedId}`);
+        await axios.post(`https://mess-management-backend-production.up.railway.app/subscriptions/consume/${scannedId}`);
         setScanStatus({ message: 'Meal Approved! ✅', type: 'success' });
         fetchAnalytics(); // Update count
       } catch (err) {
@@ -96,7 +96,7 @@ const AdminDashboard = () => {
     
     try {
       // NOTE: Make sure this API exists in your Spring Boot backend later!
-      await axios.post('http://localhost:8080/notifications/broadcast', { message: broadcastMessage });
+      await axios.post('https://mess-management-backend-production.up.railway.app/notifications/broadcast', { message: broadcastMessage });
       setBroadcastStatus({ message: 'Alert sent to all students successfully! 🚀', type: 'success' });
       setBroadcastMessage(''); // Clear input
     } catch (err) {
